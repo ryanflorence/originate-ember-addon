@@ -1,0 +1,16 @@
+{
+  "name": "originate-ember-addon",
+  "version": "0.0.0",
+  "main": "index.js",
+  "description": "loom origin for creating ember addons",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "loom": "~3.x.x",
+    "glob": "~3.2.7",
+    "shelljs": "~0.2.6"
+  }
+}
