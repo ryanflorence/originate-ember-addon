@@ -1,6 +1,6 @@
 {
   "name": "originate-ember-addon",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "index.js",
   "description": "loom origin for creating ember addons",
   "scripts": {
