@@ -8,7 +8,8 @@ exports.before = function(next, env) {
 exports.present = function(next, env) {
   next({
     appName: env.appName,
-    headerChars: env.appName.split('').map(function() { return '='; }).join('')
+    headerChars: env.appName.split('').map(function() { return '='; }).join(''),
+    compName: env.appName.split('-').map(function(part) { return part.charAt(0).toUpperCase() + part.substr(1).toLowerCase(); }).join('')
   })
 };
 
@@ -20,7 +21,9 @@ exports.templates = glob.sync(__dirname+'/../templates/**/*.hbs').map(function(t
 
 // save to the same relative location as they are in the loom templates directory
 exports.savePath = function(next, env, template) {
-  next(env.args[0]+'/'+template.replace('.hbs', ''));
+  path = env.args[0]+'/'+template.replace('.hbs', '')
+  path = path.replace('x-foo', env.appName);
+  next(path);
 };
 
 exports.after = function(next, env) {
